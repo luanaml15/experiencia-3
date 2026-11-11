@@ -33,8 +33,8 @@ main{max-width:1080px;margin:0 auto;padding:28px 20px 56px}
 .opt b{font-size:24px;line-height:1.2}
 .opt span{color:var(--muted);font-size:18px}
 .opt.sel{border-color:var(--mostaza);background:var(--sel)}
-.rank,.opt .rank{align-self:flex-start;margin-top:6px;padding:5px 16px;border-radius:999px;font-weight:700;font-size:19px;color:#1b0a09;border:2px solid rgba(0,0,0,.3)}
-.r1,.opt .r1{background:var(--mostaza)}.r2,.opt .r2{background:var(--teal)}.r3,.opt .r3{background:var(--coral)}
+.rank,.opt .rank{align-self:flex-start;margin-top:6px;padding:5px 16px;border-radius:999px;font-weight:700;font-size:19px;color:#4a0d0b;border:2px solid rgba(0,0,0,.3)}
+.r1,.opt .r1{background:var(--mostaza)}.r2,.opt .r2{background:var(--teal)}.r3,.opt .r3{background:#5fd07a}
 .fb{margin-top:28px;background:var(--card);border-left:10px solid var(--teal);border-radius:14px;padding:20px 26px}
 .fb p{margin:0 0 10px}.fb p:last-child{margin:0}
 .verd{font-size:26px;font-weight:700}
@@ -106,7 +106,7 @@ function render(){
  s.o.forEach((o,i)=>{h+='<button class="opt'+(c===i?' sel':'')+'" data-a="o" data-i="'+i+'" aria-pressed="'+(c===i)+'"><div class="pic">'+o.i+'</div><div class="tx"><b>'+o.n+'</b><span>'+o.c+'</span>'+(c!==null?badge(o.r):'')+'</div></button>'});
  h+='</div>';
  if(c!==null){const o=s.o[c],v=o.r===3?'¡Muy buena elección para Martín!':o.r===2?'Buena elección: ayuda, y hay una todavía mejor para lo que Martín necesita.':'Funciona, pero hay opciones que le facilitan más la tarea.';
-  h+='<div class="fb"><p class="verd">'+v+'</p><p><b>Por qué ayuda:</b> '+o.w+'</p><p><b>Decisión de diseño:</b> '+o.d+'</p><p class="hint">Podés cambiar tu elección tocando otra opción. Los puntos muestran qué tan bien resuelve cada una lo que Martín necesita.</p></div><div class="act"><button class="btn" data-a="n">'+(k<2?'Siguiente situación':'Ver resultados')+'</button></div>'}
+  h+='<div class="fb"><p class="verd">'+v+'</p><p><b>Por qué ayuda:</b> '+o.w+'</p><p><b>Decisión de diseño:</b> '+o.d+'</p></div><div class="act"><button class="btn" data-a="n">'+(k<2?'Siguiente situación':'Ver resultados')+'</button></div>'}
  else h+='<p class="hint">Tocá la opción que le facilite más la tarea. Podés cambiarla cuando quieras.</p>';
  a.innerHTML=h}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b)return;const a=b.dataset.a;
